@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.NewsFragment">
+
+    <data>
+        <variable
+            name="newsViewModel"
+            type="com.sandeep.mvvmnewsapp.viewmodel.NewsViewModel" >
+        </variable>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:id="@+id/srvNews"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:shimmer_recycler_item_count="4"
+            app:shimmer_recycler_layout="@layout/news_item_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivNetworkError"
+            readAPIResponse="@{newsViewModel.breakingNewsData}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.5"
+            android:src="@drawable/ic_sad"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/srvNews"
+            app:layout_constraintStart_toStartOf="@+id/srvNews"
+            app:layout_constraintTop_toTopOf="@+id/srvNews"
+            app:layout_constraintVertical_bias="0.37" />
+
+        <TextView
+            android:id="@+id/tvNetworkError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.5"
+            readAPIResponse2="@{newsViewModel.breakingNewsData}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/ivNetworkError"
+            app:layout_constraintStart_toStartOf="@+id/ivNetworkError"
+            app:layout_constraintTop_toBottomOf="@+id/ivNetworkError" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

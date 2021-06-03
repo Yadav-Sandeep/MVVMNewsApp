@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="articleBean"
+            type="com.sandeep.mvvmnewsapp.models.Article" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/cardBackgroundColor"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/viewArticleImage"
+            android:layout_width="160dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            loadImageFromUrl="@{articleBean.urlToImage}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/viewSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:maxLength="25"
+            android:ellipsize="end"
+            android:text="@{articleBean.source.name}"
+            android:textColor="@color/titleColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewArticleImage" />
+
+        <TextView
+            android:id="@+id/viewTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{articleBean.title}"
+            android:textColor="@color/titleColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/viewArticleImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/viewDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="@{articleBean.description}"
+            android:textColor="@color/descColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewArticleImage"
+            app:layout_constraintTop_toBottomOf="@+id/viewTitle" />
+
+        <TextView
+            android:id="@+id/viewPublishedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{articleBean.publishedAt}"
+            android:textColor="@color/descColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewSource" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

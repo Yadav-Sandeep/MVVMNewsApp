@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_news">Search News</string>
+    <string name="saved_news">Saved News</string>
+    <string name="saved_sucessfully">Saved Sucessfully</string>
+    <string name="delete_sucessfull">Delete Successfull</string>
+    <string name="undo">Undo</string>
+    <string name="no_news_saved">No news saved yet!!</string>
+</resources>

@@ -12,4 +12,4 @@ App features
 To run the app you need to get a free API key from https://newsapi.org and put it in your gradle.properties file with the key API_KEY.
 <br/><br/>
 
-![newsAppPic](https://user-images.githubusercontent.com/45170524/120623535-6f2b5900-c47d-11eb-9951-9770fc538d6c.jpg)
+![mvvmnewsapp](https://user-images.githubusercontent.com/45170524/122745566-c36c7080-d2a6-11eb-8bd7-fc2642a8a006.jpg)
